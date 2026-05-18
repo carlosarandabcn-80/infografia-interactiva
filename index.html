@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Microinfografía interactiva profesional para caso social: CIE-11, genograma, ecomapa, trayectoria, matriz funcional y plan socioeducativo." />
+  <title>Del CIE-11 al apoyo socioeducativo · Caso social</title>
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero" id="inicio">
+      <div class="hero__left">
+        <span class="eyebrow">UNIR · Educación Social · Caso familiar</span>
+        <h1>Del CIE-11 al apoyo socioeducativo</h1>
+        <p>Microinfografía interactiva para leer un caso social con herramientas profesionales: capas de análisis, genograma, ecomapa, trayectoria, matriz funcional y plan preventivo.</p>
+        <div class="hero-actions">
+          <button class="btn btn--glass" id="fullScreenBtn" type="button">Pantalla completa</button>
+          <button class="btn btn--glass" id="printBtn" type="button">Guardar como PDF</button>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="hero-card__mark">CIE</div>
+        <div>
+          <strong>Uso académico y ético</strong>
+          <p>No diagnostica. No sustituye el navegador oficial de la CIE-11. Ordena la discusión para traducir información sanitaria en necesidades sociales, apoyos y seguimiento.</p>
+        </div>
+      </aside>
+    </header>
+
+    <section class="orientation">
+      <article class="orientation-card">
+        <span>01</span>
+        <p>La CIE-11 aporta un lenguaje sanitario común. La Educación Social convierte esa información en <strong>apoyos verificables, derechos, autonomía y red</strong>.</p>
+      </article>
+      <article class="orientation-card orientation-card--gold">
+        <span>ÉT</span>
+        <p><strong>Cautela profesional.</strong> Los códigos son orientativos y el diagnóstico corresponde al ámbito clínico. El rol socioeducativo es detectar, acompañar, coordinar y evaluar.</p>
+      </article>
+    </section>
+
+    <nav class="top-nav" aria-label="Navegación interna">
+      <a href="#capas">Caso por capas</a>
+      <a href="#herramientas">Herramientas de caso social</a>
+      <a href="#ruta">Ruta código-apoyo</a>
+    </nav>
+
+    <main>
+      <section class="section" id="capas">
+        <div class="section-head">
+          <span class="section-index">01</span>
+          <div>
+            <h2>Lectura del caso por capas</h2>
+            <p>Selecciona un miembro y una capa. La clave está en pasar del dato sanitario a una necesidad socioeducativa concreta y evaluable.</p>
+          </div>
+        </div>
+        <div class="case-grid">
+          <div class="member-list" id="memberList"></div>
+          <div class="layer-workspace">
+            <div class="layer-tabs" id="layerTabs"></div>
+            <article class="layer-card" id="layerCard" aria-live="polite"></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--soft" id="herramientas">
+        <div class="section-head section-head--wide">
+          <span class="section-index">02</span>
+          <div>
+            <h2>Herramientas propias de caso social</h2>
+            <p>Genograma, ecomapa, trayectoria, matriz funcional y plan de caso. Esta zona está rediseñada para ser más legible, visual, funcional y útil para la evaluación.</p>
+          </div>
+        </div>
+
+        <div class="tool-lab">
+          <div class="tool-menu" id="toolMenu" aria-label="Herramientas sociales"></div>
+          <div class="tool-stage">
+            <div class="tool-stage__bar">
+              <div>
+                <small id="toolKicker">Herramienta social</small>
+                <strong id="toolTitle">Genograma profesional</strong>
+                <p id="toolSubtitle">Composición familiar, convivencia y vínculo entre problemas de salud.</p>
+              </div>
+              <div class="mode-switch" role="group" aria-label="Modo de lectura">
+                <button class="mode-btn is-active" id="factsMode" type="button">Datos del caso</button>
+                <button class="mode-btn" id="proposalMode" type="button">Propuesta profesional</button>
+              </div>
+            </div>
+            <div class="tool-canvas" id="toolCanvas" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="ruta">
+        <div class="section-head">
+          <span class="section-index">03</span>
+          <div>
+            <h2>Ruta del código al apoyo</h2>
+            <p>Secuencia para evitar que el caso quede reducido a una etiqueta diagnóstica.</p>
+          </div>
+        </div>
+        <div class="route-grid">
+          <article><span>1</span><h3>Problema de salud</h3><p>Opioides, cannabis, alcohol, ansiedad, artrosis y pérdida de autonomía familiar.</p></article>
+          <article><span>2</span><h3>CIE-11 orientativa</h3><p>Lenguaje sanitario común, siempre prudente y subordinado a valoración clínica.</p></article>
+          <article><span>3</span><h3>Cautela ética</h3><p>El código ordena información, pero no sustituye historia de vida ni diagnóstico profesional.</p></article>
+          <article><span>4</span><h3>Necesidad social</h3><p>Adherencia, ingresos, apoyo familiar, sobrecarga, autonomía y red comunitaria.</p></article>
+          <article><span>5</span><h3>Apoyo socioeducativo</h3><p>Acompañamiento, coordinación, derivación, educación familiar, reducción de daños y seguimiento.</p></article>
+        </div>
+      </section>
+
+      
+
+
+      
+
+
+      
+      <section id="fuentes" class="source-strip" aria-label="Fuentes y marco de apoyo">
+        <details class="sources-accordion">
+          <summary>
+            <span class="sources-mark">RF</span>
+            <span>
+              <strong>Fuentes y marco de apoyo</strong>
+              <small>OMS CIE-11 · UNIR · Observatorio Español de las Drogas y las Adicciones</small>
+            </span>
+          </summary>
+          <div class="sources-body">
+            <p>Referencias usadas como marco de prudencia diagnóstica, coordinación sociosanitaria, promoción de la salud y lectura socioeducativa del caso.</p>
+            <ol>
+              <li>Organización Mundial de la Salud. Clasificación Internacional de Enfermedades, 11.ª revisión. Navegador oficial CIE-11. <a href="https://icd.who.int/es" target="_blank" rel="noopener">https://icd.who.int/es</a></li>
+              <li>Universidad Internacional de La Rioja. Tema 1. Bases conceptuales de salud, dependencia y vulnerabilidad social.</li>
+              <li>Universidad Internacional de La Rioja. Tema 5. Organización sanitaria.</li>
+              <li>Universidad Internacional de La Rioja. Tema 6. Educación para la salud.</li>
+              <li>Universidad Internacional de La Rioja. Tema 8. Salud, enfermedades y diversidad funcional.</li>
+              <li>Universidad Internacional de La Rioja. Tema 10. Salud y dependencia.</li>
+              <li>Observatorio Español de las Drogas y las Adicciones. Indicadores clave sobre drogas y adicciones, 2025. Ministerio de Sanidad.</li>
+            </ol>
+          </div>
+        </details>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>Microinfografía académica interactiva · Educación Social</span>
+      <span>Uso orientativo · No diagnóstico</span>
+    </footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite">Texto copiado</div>
+  <script src="js/app.js"></script>
+</body>
+</html>
