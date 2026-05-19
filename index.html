@@ -1,152 +1,140 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Microinfografía interactiva profesional para caso social: CIE-11, genograma, ecomapa, trayectoria, matriz funcional y plan socioeducativo." />
-  <title>Del CIE-11 al apoyo socioeducativo · Caso social</title>
-  <link rel="stylesheet" href="css/app.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Infografía interactiva sobre CIE-11 y apoyo socioeducativo: lectura por capas, herramientas de caso social y ruta ética del código al apoyo.">
+  <meta name="theme-color" content="#152238">
+  <title>Del CIE-11 al apoyo socioeducativo · Infografía interactiva</title>
+  <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-  <div class="page-shell">
-    <header class="hero" id="inicio">
-      <div class="hero__left">
-        <span class="eyebrow">UNIR · Educación Social · Caso familiar</span>
-        <h1>Del CIE-11 al apoyo socioeducativo</h1>
-        <p>Microinfografía interactiva para leer un caso social con herramientas profesionales: capas de análisis, genograma, ecomapa, trayectoria, matriz funcional y plan preventivo.</p>
-        <div class="hero-actions">
-          <button class="btn btn--glass" id="fullScreenBtn" type="button">Pantalla completa</button>
-          <button class="btn btn--glass" id="printBtn" type="button">Guardar como PDF</button>
-        </div>
-      </div>
-      <aside class="hero-card">
-        <div class="hero-card__mark">CIE</div>
-        <div>
-          <strong>Uso académico y ético</strong>
-          <p>No diagnostica. No sustituye el navegador oficial de la CIE-11. Ordena la discusión para traducir información sanitaria en necesidades sociales, apoyos y seguimiento.</p>
-        </div>
-      </aside>
-    </header>
+  <div class="reading-progress" aria-hidden="true"><span id="progress-bar"></span></div>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
 
-    <section class="orientation">
-      <article class="orientation-card">
-        <span>01</span>
-        <p>La CIE-11 aporta un lenguaje sanitario común. La Educación Social convierte esa información en <strong>apoyos verificables, derechos, autonomía y red</strong>.</p>
-      </article>
-      <article class="orientation-card orientation-card--gold">
-        <span>ÉT</span>
-        <p><strong>Cautela profesional.</strong> Los códigos son orientativos y el diagnóstico corresponde al ámbito clínico. El rol socioeducativo es detectar, acompañar, coordinar y evaluar.</p>
-      </article>
-    </section>
-
-    <nav class="top-nav" aria-label="Navegación interna">
-      <a href="#capas">Caso por capas</a>
-      <a href="#herramientas">Herramientas de caso social</a>
-      <a href="#ruta">Ruta código-apoyo</a>
+  <header class="site-header" id="inicio">
+    <nav class="nav" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <span class="brand__mark" aria-hidden="true">CIE</span>
+        <span><strong>UNIR · Educación Social</strong><small>Caso familiar · Infografía académica</small></span>
+      </a>
+      <button class="nav__toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+      <ul class="nav__menu" id="menu">
+        <li><a href="#caso" data-nav-link>Caso por capas</a></li>
+        <li><a href="#herramientas" data-nav-link>Herramientas</a></li>
+        <li><a href="#ruta" data-nav-link>Ruta</a></li>
+        <li><a href="#evaluacion" data-nav-link>Evaluación</a></li>
+        <li><a href="#referencias" data-nav-link>Referencias</a></li>
+      </ul>
     </nav>
 
-    <main>
-      <section class="section" id="capas">
-        <div class="section-head">
-          <span class="section-index">01</span>
-          <div>
-            <h2>Lectura del caso por capas</h2>
-            <p>Selecciona un miembro y una capa. La clave está en pasar del dato sanitario a una necesidad socioeducativa concreta y evaluable.</p>
-          </div>
+    <section class="hero section-shell" aria-labelledby="hero-title">
+      <div class="hero__content reveal">
+        <p class="eyebrow">Del lenguaje sanitario común al acompañamiento socioeducativo</p>
+        <h1 id="hero-title">Del CIE-11 al apoyo socioeducativo</h1>
+        <p class="hero__lead">Infografía interactiva para leer un caso social con capas de análisis, genograma, ecomapa, trayectoria, matriz funcional y plan preventivo. El objetivo no es diagnosticar, sino traducir información sanitaria en necesidades sociales, apoyos verificables, coordinación y seguimiento.</p>
+        <div class="hero__actions" aria-label="Acciones de la infografía">
+          <a class="button button--primary" href="#caso">Empezar lectura guiada</a>
+          <button class="button" type="button" id="fullscreen-button">Pantalla completa</button>
+          <button class="button" type="button" id="print-button">Guardar como PDF</button>
         </div>
-        <div class="case-grid">
-          <div class="member-list" id="memberList"></div>
-          <div class="layer-workspace">
-            <div class="layer-tabs" id="layerTabs"></div>
-            <article class="layer-card" id="layerCard" aria-live="polite"></article>
+        <p class="meta" id="reading-estimate" aria-live="polite">Lectura estimada: calculando…</p>
+      </div>
+      <aside class="ethics-card reveal" aria-labelledby="ethics-title">
+        <span class="card-kicker">Uso académico y ético</span>
+        <h2 id="ethics-title">Cautela profesional</h2>
+        <p>La CIE-11 aporta un lenguaje sanitario común, pero no sustituye el navegador oficial ni la valoración clínica. El rol socioeducativo es detectar, acompañar, coordinar y evaluar sin reducir la historia de vida a una etiqueta diagnóstica.</p>
+        <dl class="metrics" aria-label="Principios de lectura">
+          <div><dt>01</dt><dd>Prudencia diagnóstica</dd></div>
+          <div><dt>02</dt><dd>Necesidad social concreta</dd></div>
+          <div><dt>03</dt><dd>Apoyo verificable</dd></div>
+        </dl>
+      </aside>
+    </section>
+  </header>
+
+  <main id="contenido">
+    <section class="section-shell narrative-section" id="caso" aria-labelledby="caso-title">
+      <div class="section-heading reveal">
+        <p class="section-number">01</p>
+        <div><h2 id="caso-title">Lectura del caso por capas</h2><p>Selecciona un foco del sistema familiar y una capa de análisis. La interacción muestra cómo pasar del dato sanitario a una necesidad socioeducativa concreta, evaluable y coordinada.</p></div>
+      </div>
+      <div class="case-grid">
+        <article class="panel reveal" aria-labelledby="family-focus-title">
+          <h3 id="family-focus-title">Foco de observación</h3>
+          <p class="muted">Usa los botones para cambiar la lectura del caso.</p>
+          <div class="button-group" role="group" aria-label="Seleccionar foco familiar" id="member-buttons"></div>
+        </article>
+        <article class="panel reveal" aria-labelledby="analysis-layer-title">
+          <h3 id="analysis-layer-title">Capa profesional</h3>
+          <p class="muted">Cada capa evita una lectura plana del problema y orienta una decisión de intervención.</p>
+          <div class="button-group" role="group" aria-label="Seleccionar capa de análisis" id="layer-buttons"></div>
+        </article>
+        <article class="panel result-panel reveal" aria-labelledby="case-output-title">
+          <div class="result-header"><span class="status-dot" aria-hidden="true"></span><h3 id="case-output-title">Resultado de lectura</h3></div>
+          <p id="case-output" class="case-output" aria-live="polite"></p>
+          <p id="case-feedback" class="feedback-text" aria-live="polite"></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell narrative-section section-tint" id="herramientas" aria-labelledby="herramientas-title">
+      <div class="section-heading reveal">
+        <p class="section-number">02</p>
+        <div><h2 id="herramientas-title">Herramientas propias de caso social</h2><p>Genograma, ecomapa, trayectoria, matriz funcional y plan de caso se presentan como instrumentos complementarios. Pulsa una herramienta para ver su función, el dato que ordena y la propuesta de uso.</p></div>
+      </div>
+      <div class="tools-layout">
+        <div class="tool-list reveal" role="list" aria-label="Herramientas de intervención" id="tool-list"></div>
+        <article class="tool-detail panel reveal" aria-labelledby="tool-title">
+          <span class="card-kicker" id="tool-kicker">Herramienta social</span>
+          <h3 id="tool-title">Genograma profesional</h3>
+          <p id="tool-description"></p>
+          <div class="detail-switcher" role="group" aria-label="Alternar detalle de herramienta">
+            <button class="chip active" type="button" data-mode="case" aria-pressed="true">Datos del caso</button>
+            <button class="chip" type="button" data-mode="proposal" aria-pressed="false">Propuesta profesional</button>
           </div>
-        </div>
-      </section>
+          <div class="detail-box" id="tool-detail" tabindex="-1"></div>
+        </article>
+      </div>
+    </section>
 
-      <section class="section section--soft" id="herramientas">
-        <div class="section-head section-head--wide">
-          <span class="section-index">02</span>
-          <div>
-            <h2>Herramientas propias de caso social</h2>
-            <p>Genograma, ecomapa, trayectoria, matriz funcional y plan de caso. Esta zona está rediseñada para ser más legible, visual, funcional y útil para la evaluación.</p>
-          </div>
-        </div>
+    <section class="section-shell narrative-section" id="ruta" aria-labelledby="ruta-title">
+      <div class="section-heading reveal">
+        <p class="section-number">03</p>
+        <div><h2 id="ruta-title">Ruta del código al apoyo</h2><p>Secuencia narrativa para evitar que el caso quede reducido a una etiqueta. Activa cada paso para ver su traducción socioeducativa y su cautela metodológica.</p></div>
+      </div>
+      <div class="route-wrapper reveal">
+        <ol class="route-steps" id="route-steps" aria-label="Secuencia código-apoyo"></ol>
+        <article class="panel route-detail" aria-labelledby="route-title"><p class="card-kicker" id="route-label">Paso 1</p><h3 id="route-title">Problema de salud</h3><p id="route-text"></p><p class="feedback-text" id="route-feedback" aria-live="polite"></p></article>
+      </div>
+    </section>
 
-        <div class="tool-lab">
-          <div class="tool-menu" id="toolMenu" aria-label="Herramientas sociales"></div>
-          <div class="tool-stage">
-            <div class="tool-stage__bar">
-              <div>
-                <small id="toolKicker">Herramienta social</small>
-                <strong id="toolTitle">Genograma profesional</strong>
-                <p id="toolSubtitle">Composición familiar, convivencia y vínculo entre problemas de salud.</p>
-              </div>
-              <div class="mode-switch" role="group" aria-label="Modo de lectura">
-                <button class="mode-btn is-active" id="factsMode" type="button">Datos del caso</button>
-                <button class="mode-btn" id="proposalMode" type="button">Propuesta profesional</button>
-              </div>
-            </div>
-            <div class="tool-canvas" id="toolCanvas" aria-live="polite"></div>
-          </div>
-        </div>
-      </section>
+    <section class="section-shell narrative-section" id="evaluacion" aria-labelledby="evaluacion-title">
+      <div class="section-heading reveal">
+        <p class="section-number">04</p>
+        <div><h2 id="evaluacion-title">Criterios de evaluación y cierre preventivo</h2><p>Lista interactiva para comprobar coherencia ética, trazabilidad y utilidad práctica. Cada criterio marcado genera feedback textual para el lector.</p></div>
+      </div>
+      <div class="evaluation-grid">
+        <article class="panel reveal"><h3>Checklist profesional</h3><ul class="checklist" id="checklist" aria-label="Criterios de calidad"></ul><p class="feedback-text" id="checklist-feedback" aria-live="polite">Marca criterios para ver el progreso de calidad.</p></article>
+        <article class="panel summary-card reveal"><h3>Síntesis operativa</h3><p>Una lectura socioeducativa rigurosa identifica factores de riesgo y protección, formula objetivos breves, activa apoyos realistas, coordina sistemas y revisa resultados con indicadores observables.</p><button class="button button--primary" type="button" id="copy-summary-button">Copiar síntesis</button><p class="feedback-text" id="copy-feedback" aria-live="polite"></p></article>
+      </div>
+    </section>
 
-      <section class="section" id="ruta">
-        <div class="section-head">
-          <span class="section-index">03</span>
-          <div>
-            <h2>Ruta del código al apoyo</h2>
-            <p>Secuencia para evitar que el caso quede reducido a una etiqueta diagnóstica.</p>
-          </div>
-        </div>
-        <div class="route-grid">
-          <article><span>1</span><h3>Problema de salud</h3><p>Opioides, cannabis, alcohol, ansiedad, artrosis y pérdida de autonomía familiar.</p></article>
-          <article><span>2</span><h3>CIE-11 orientativa</h3><p>Lenguaje sanitario común, siempre prudente y subordinado a valoración clínica.</p></article>
-          <article><span>3</span><h3>Cautela ética</h3><p>El código ordena información, pero no sustituye historia de vida ni diagnóstico profesional.</p></article>
-          <article><span>4</span><h3>Necesidad social</h3><p>Adherencia, ingresos, apoyo familiar, sobrecarga, autonomía y red comunitaria.</p></article>
-          <article><span>5</span><h3>Apoyo socioeducativo</h3><p>Acompañamiento, coordinación, derivación, educación familiar, reducción de daños y seguimiento.</p></article>
-        </div>
-      </section>
+    <section class="section-shell references" id="referencias" aria-labelledby="referencias-title">
+      <div class="section-heading reveal"><p class="section-number">RF</p><div><h2 id="referencias-title">Referencias y marco de apoyo</h2><p>Fuentes institucionales para prudencia diagnóstica, accesibilidad y contextualización socioeducativa.</p></div></div>
+      <div class="panel reveal">
+        <ol>
+          <li>Organización Mundial de la Salud. <a href="https://icd.who.int/es" target="_blank" rel="noopener noreferrer">CIE-11, navegador oficial</a>.</li>
+          <li>W3C Web Accessibility Initiative. <a href="https://www.w3.org/WAI/WCAG22/quickref/" target="_blank" rel="noopener noreferrer">WCAG 2.2 Quick Reference</a>.</li>
+          <li>Observatorio Español de las Drogas y las Adicciones. <a href="https://pnsd.sanidad.gob.es/profesionales/sistemasInformacion/home.htm" target="_blank" rel="noopener noreferrer">Indicadores y sistemas de información</a>.</li>
+          <li>Material docente UNIR de Salud, Dependencia y Vulnerabilidad Social citado como marco académico del caso.</li>
+        </ol>
+      </div>
+    </section>
+  </main>
 
-      
-
-
-      
-
-
-      
-      <section id="fuentes" class="source-strip" aria-label="Fuentes y marco de apoyo">
-        <details class="sources-accordion">
-          <summary>
-            <span class="sources-mark">RF</span>
-            <span>
-              <strong>Fuentes y marco de apoyo</strong>
-              <small>OMS CIE-11 · UNIR · Observatorio Español de las Drogas y las Adicciones</small>
-            </span>
-          </summary>
-          <div class="sources-body">
-            <p>Referencias usadas como marco de prudencia diagnóstica, coordinación sociosanitaria, promoción de la salud y lectura socioeducativa del caso.</p>
-            <ol>
-              <li>Organización Mundial de la Salud. Clasificación Internacional de Enfermedades, 11.ª revisión. Navegador oficial CIE-11. <a href="https://icd.who.int/es" target="_blank" rel="noopener">https://icd.who.int/es</a></li>
-              <li>Universidad Internacional de La Rioja. Tema 1. Bases conceptuales de salud, dependencia y vulnerabilidad social.</li>
-              <li>Universidad Internacional de La Rioja. Tema 5. Organización sanitaria.</li>
-              <li>Universidad Internacional de La Rioja. Tema 6. Educación para la salud.</li>
-              <li>Universidad Internacional de La Rioja. Tema 8. Salud, enfermedades y diversidad funcional.</li>
-              <li>Universidad Internacional de La Rioja. Tema 10. Salud y dependencia.</li>
-              <li>Observatorio Español de las Drogas y las Adicciones. Indicadores clave sobre drogas y adicciones, 2025. Ministerio de Sanidad.</li>
-            </ol>
-          </div>
-        </details>
-      </section>
-
-    </main>
-
-    <footer class="footer">
-      <span>Microinfografía académica interactiva · Educación Social· Carlos Aranda Sánchez· 2026</span>
-      <span>Uso orientativo · No diagnóstico</span>
-    </footer>
-  </div>
-  <div class="toast" id="toast" role="status" aria-live="polite">Texto copiado</div>
+  <footer class="footer"><p>Microinfografía académica interactiva · Educación Social · Carlos Aranda Sánchez · 2026</p><button class="back-top" id="back-to-top" type="button">Volver arriba</button></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="js/app.js"></script>
 </body>
 </html>
