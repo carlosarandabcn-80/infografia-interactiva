@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Infografía interactiva sobre CIE-11 y apoyo socioeducativo: lectura por capas, herramientas de caso social y ruta ética del código al apoyo.">
+  <meta name="description" content="Infografía interactiva sobre CIE-11 y apoyo socioeducativo: perfiles familiares, genograma, ecomapa, trayectoria, matriz funcional y plan socioeducativo.">
   <meta name="theme-color" content="#152238">
   <title>Del CIE-11 al apoyo socioeducativo · Infografía interactiva</title>
   <link rel="stylesheet" href="css/app.css">
@@ -32,7 +32,7 @@
       <div class="hero__content reveal">
         <p class="eyebrow">Del lenguaje sanitario común al acompañamiento socioeducativo</p>
         <h1 id="hero-title">Del CIE-11 al apoyo socioeducativo</h1>
-        <p class="hero__lead">Infografía interactiva para leer un caso social con capas de análisis, genograma, ecomapa, trayectoria, matriz funcional y plan preventivo. El objetivo no es diagnosticar, sino traducir información sanitaria en necesidades sociales, apoyos verificables, coordinación y seguimiento.</p>
+        <p class="hero__lead">Infografía interactiva para leer un caso social sin reducirlo a una etiqueta: perfiles familiares, capas de análisis, genograma, ecomapa, trayectoria, matriz funcional y plan preventivo.</p>
         <div class="hero__actions" aria-label="Acciones de la infografía">
           <a class="button button--primary" href="#caso">Empezar lectura guiada</a>
           <button class="button" type="button" id="fullscreen-button">Pantalla completa</button>
@@ -43,7 +43,7 @@
       <aside class="ethics-card reveal" aria-labelledby="ethics-title">
         <span class="card-kicker">Uso académico y ético</span>
         <h2 id="ethics-title">Cautela profesional</h2>
-        <p>La CIE-11 aporta un lenguaje sanitario común, pero no sustituye el navegador oficial ni la valoración clínica. El rol socioeducativo es detectar, acompañar, coordinar y evaluar sin reducir la historia de vida a una etiqueta diagnóstica.</p>
+        <p>La CIE-11 aporta un lenguaje común, pero la intervención socioeducativa no diagnostica. Ordena necesidades, barreras, capacidades, apoyos y seguimiento, respetando autonomía y no estigmatización.</p>
         <dl class="metrics" aria-label="Principios de lectura">
           <div><dt>01</dt><dd>Prudencia diagnóstica</dd></div>
           <div><dt>02</dt><dd>Necesidad social concreta</dd></div>
@@ -57,51 +57,55 @@
     <section class="section-shell narrative-section" id="caso" aria-labelledby="caso-title">
       <div class="section-heading reveal">
         <p class="section-number">01</p>
-        <div><h2 id="caso-title">Lectura del caso por capas</h2><p>Selecciona un foco del sistema familiar y una capa de análisis. La interacción muestra cómo pasar del dato sanitario a una necesidad socioeducativa concreta, evaluable y coordinada.</p></div>
+        <div><h2 id="caso-title">Lectura del caso por capas</h2><p>Selecciona un perfil familiar y una capa profesional. El módulo muestra icono de perfil, señales del caso, cautela ética, necesidad socioeducativa y apoyo operativo.</p></div>
       </div>
-      <div class="case-grid">
+      <div class="case-grid case-grid--profiles">
         <article class="panel reveal" aria-labelledby="family-focus-title">
-          <h3 id="family-focus-title">Foco de observación</h3>
-          <p class="muted">Usa los botones para cambiar la lectura del caso.</p>
-          <div class="button-group" role="group" aria-label="Seleccionar foco familiar" id="member-buttons"></div>
+          <h3 id="family-focus-title">Perfil de observación</h3>
+          <p class="muted">Cada perfil cambia el foco del análisis sin perder la mirada sistémica.</p>
+          <div class="member-list" role="group" aria-label="Seleccionar perfil familiar" id="member-buttons"></div>
         </article>
         <article class="panel reveal" aria-labelledby="analysis-layer-title">
           <h3 id="analysis-layer-title">Capa profesional</h3>
-          <p class="muted">Cada capa evita una lectura plana del problema y orienta una decisión de intervención.</p>
-          <div class="button-group" role="group" aria-label="Seleccionar capa de análisis" id="layer-buttons"></div>
+          <p class="muted">Las capas separan dato sanitario, necesidad social, riesgo/protección y apoyo evaluable.</p>
+          <div class="layer-list" role="group" aria-label="Seleccionar capa de análisis" id="layer-buttons"></div>
         </article>
         <article class="panel result-panel reveal" aria-labelledby="case-output-title">
           <div class="result-header"><span class="status-dot" aria-hidden="true"></span><h3 id="case-output-title">Resultado de lectura</h3></div>
-          <p id="case-output" class="case-output" aria-live="polite"></p>
+          <div class="profile-result" id="member-profile" aria-live="polite"></div>
+          <div class="case-synthesis" id="case-output"></div>
           <p id="case-feedback" class="feedback-text" aria-live="polite"></p>
         </article>
       </div>
     </section>
 
-    <section class="section-shell narrative-section section-tint" id="herramientas" aria-labelledby="herramientas-title">
-      <div class="section-heading reveal">
-        <p class="section-number">02</p>
-        <div><h2 id="herramientas-title">Herramientas propias de caso social</h2><p>Genograma, ecomapa, trayectoria, matriz funcional y plan de caso se presentan como instrumentos complementarios. Pulsa una herramienta para ver su función, el dato que ordena y la propuesta de uso.</p></div>
-      </div>
-      <div class="tools-layout">
-        <div class="tool-list reveal" role="list" aria-label="Herramientas de intervención" id="tool-list"></div>
-        <article class="tool-detail panel reveal" aria-labelledby="tool-title">
-          <span class="card-kicker" id="tool-kicker">Herramienta social</span>
-          <h3 id="tool-title">Genograma profesional</h3>
-          <p id="tool-description"></p>
-          <div class="detail-switcher" role="group" aria-label="Alternar detalle de herramienta">
-            <button class="chip active" type="button" data-mode="case" aria-pressed="true">Datos del caso</button>
-            <button class="chip" type="button" data-mode="proposal" aria-pressed="false">Propuesta profesional</button>
-          </div>
-          <div class="detail-box" id="tool-detail" tabindex="-1"></div>
-        </article>
+    <section class="section-tint" id="herramientas" aria-labelledby="herramientas-title">
+      <div class="section-shell narrative-section">
+        <div class="section-heading reveal">
+          <p class="section-number">02</p>
+          <div><h2 id="herramientas-title">Herramientas propias de caso social</h2><p>El módulo renderiza herramientas reales: genograma, ecomapa o mapa de recursos, trayectoria, matriz funcional y plan socioeducativo. Cada herramienta tiene visualización, lectura del caso y propuesta profesional.</p></div>
+        </div>
+        <div class="tools-layout">
+          <div class="tool-list reveal" role="group" aria-label="Seleccionar herramienta social" id="tool-list"></div>
+          <article class="tool-detail panel reveal" aria-labelledby="tool-title">
+            <span class="card-kicker" id="tool-kicker">Herramienta social</span>
+            <h3 id="tool-title">Genograma profesional</h3>
+            <p id="tool-description"></p>
+            <div class="detail-switcher" role="group" aria-label="Alternar detalle de herramienta">
+              <button class="chip active" type="button" data-mode="case" aria-pressed="true">Datos del caso</button>
+              <button class="chip" type="button" data-mode="proposal" aria-pressed="false">Propuesta profesional</button>
+            </div>
+            <div class="tool-visual" id="tool-visual" aria-live="polite"></div>
+            <div class="detail-box" id="tool-detail" tabindex="-1"></div>
+          </article>
+        </div>
       </div>
     </section>
 
     <section class="section-shell narrative-section" id="ruta" aria-labelledby="ruta-title">
       <div class="section-heading reveal">
         <p class="section-number">03</p>
-        <div><h2 id="ruta-title">Ruta del código al apoyo</h2><p>Secuencia narrativa para evitar que el caso quede reducido a una etiqueta. Activa cada paso para ver su traducción socioeducativa y su cautela metodológica.</p></div>
+        <div><h2 id="ruta-title">Ruta del código al apoyo</h2><p>Secuencia para pasar de un dato sanitario orientativo a una acción socioeducativa coordinada, sin invadir la competencia clínica.</p></div>
       </div>
       <div class="route-wrapper reveal">
         <ol class="route-steps" id="route-steps" aria-label="Secuencia código-apoyo"></ol>
@@ -112,11 +116,11 @@
     <section class="section-shell narrative-section" id="evaluacion" aria-labelledby="evaluacion-title">
       <div class="section-heading reveal">
         <p class="section-number">04</p>
-        <div><h2 id="evaluacion-title">Criterios de evaluación y cierre preventivo</h2><p>Lista interactiva para comprobar coherencia ética, trazabilidad y utilidad práctica. Cada criterio marcado genera feedback textual para el lector.</p></div>
+        <div><h2 id="evaluacion-title">Criterios de evaluación y cierre preventivo</h2><p>Checklist de coherencia: trazabilidad, ética, red, objetivos e indicadores. Cada criterio marcado genera feedback textual.</p></div>
       </div>
       <div class="evaluation-grid">
         <article class="panel reveal"><h3>Checklist profesional</h3><ul class="checklist" id="checklist" aria-label="Criterios de calidad"></ul><p class="feedback-text" id="checklist-feedback" aria-live="polite">Marca criterios para ver el progreso de calidad.</p></article>
-        <article class="panel summary-card reveal"><h3>Síntesis operativa</h3><p>Una lectura socioeducativa rigurosa identifica factores de riesgo y protección, formula objetivos breves, activa apoyos realistas, coordina sistemas y revisa resultados con indicadores observables.</p><button class="button button--primary" type="button" id="copy-summary-button">Copiar síntesis</button><p class="feedback-text" id="copy-feedback" aria-live="polite"></p></article>
+        <article class="panel summary-card reveal"><h3>Síntesis operativa</h3><p id="summary-text">Una lectura socioeducativa rigurosa identifica factores de riesgo y protección, formula objetivos breves, activa apoyos realistas, coordina sistemas y revisa resultados con indicadores observables.</p><button class="button button--primary" type="button" id="copy-summary-button">Copiar síntesis</button><p class="feedback-text" id="copy-feedback" aria-live="polite"></p></article>
       </div>
     </section>
 
