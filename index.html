@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Infografía interactiva sobre CIE-11 y apoyo socioeducativo: perfiles familiares, genograma, ecomapa, trayectoria, matriz funcional y plan socioeducativo.">
+  <meta name="description" content="Infografía interactiva sobre CIE-11 y apoyo socioeducativo: perfiles familiares, genograma, ecomapa, trayectoria, matriz funcional, evaluación profesional y cierre preventivo.">
   <meta name="theme-color" content="#152238">
   <title>Del CIE-11 al apoyo socioeducativo · Infografía interactiva</title>
-  <link rel="stylesheet" href="css/app.css?v=20260519-03">
+  <link rel="stylesheet" href="css/app.css?v=20260521-01">
 </head>
 <body>
   <div class="reading-progress" aria-hidden="true"><span id="progress-bar"></span></div>
@@ -116,11 +116,50 @@
     <section class="section-shell narrative-section" id="evaluacion" aria-labelledby="evaluacion-title">
       <div class="section-heading reveal">
         <p class="section-number">04</p>
-        <div><h2 id="evaluacion-title">Criterios de evaluación y cierre preventivo</h2><p>Checklist de coherencia: trazabilidad, ética, red, objetivos e indicadores. Cada criterio marcado genera feedback textual.</p></div>
+        <div>
+          <h2 id="evaluacion-title">Criterios de evaluación y cierre preventivo</h2>
+          <p>Rúbrica profesional para verificar que la lectura del caso se transforma en intervención socioeducativa: delimitación de rol, evidencias, red de apoyo, objetivos evaluables, alertas tempranas y continuidad del acompañamiento.</p>
+        </div>
       </div>
-      <div class="evaluation-grid">
-        <article class="panel reveal"><h3>Checklist profesional</h3><ul class="checklist" id="checklist" aria-label="Criterios de calidad"></ul><p class="feedback-text" id="checklist-feedback" aria-live="polite">Marca criterios para ver el progreso de calidad.</p></article>
-        <article class="panel summary-card reveal"><h3>Síntesis operativa</h3><p id="summary-text">Una lectura socioeducativa rigurosa identifica factores de riesgo y protección, formula objetivos breves, activa apoyos realistas, coordina sistemas y revisa resultados con indicadores observables.</p><button class="button button--primary" type="button" id="copy-summary-button">Copiar síntesis</button><p class="feedback-text" id="copy-feedback" aria-live="polite"></p></article>
+      <div class="evaluation-dashboard">
+        <article class="panel evaluation-main reveal" aria-labelledby="quality-title">
+          <div class="panel-topline">
+            <span class="card-kicker">Evaluación aplicada</span>
+            <strong id="quality-score" aria-live="polite">0/6</strong>
+          </div>
+          <h3 id="quality-title">Rúbrica socioeducativa de calidad</h3>
+          <p class="muted">Marca los criterios que ya están cubiertos. El sistema actualiza el nivel de madurez, las evidencias mínimas y la recomendación de cierre preventivo.</p>
+          <div class="quality-meter" aria-hidden="true"><span id="quality-meter"></span></div>
+          <ul class="checklist evaluation-criteria" id="checklist" aria-label="Criterios profesionales de calidad"></ul>
+          <p class="feedback-text" id="checklist-feedback" aria-live="polite">Marca criterios para estimar la solidez del plan socioeducativo.</p>
+        </article>
+
+        <aside class="panel evaluation-aside reveal" aria-labelledby="evidence-title">
+          <h3 id="evidence-title">Evidencias mínimas para sostener la intervención</h3>
+          <p class="muted">La evaluación no se cierra por intuición: requiere registros breves, observables y revisables por la red profesional.</p>
+          <ul class="evidence-list" id="evaluation-evidence" aria-live="polite"></ul>
+          <div class="closure-card" aria-live="polite">
+            <span class="card-kicker">Cierre preventivo</span>
+            <h4 id="closure-title">Pendiente de garantías básicas</h4>
+            <p id="closure-text">Antes de cerrar o espaciar el seguimiento, valida criterios suficientes de seguridad, coordinación y continuidad.</p>
+            <div class="closure-status" id="closure-status">Nivel inicial</div>
+          </div>
+        </aside>
+
+        <article class="panel summary-card evaluation-summary reveal" aria-labelledby="summary-title">
+          <span class="card-kicker">Síntesis exportable</span>
+          <h3 id="summary-title">Informe breve de cierre</h3>
+          <p id="summary-text">Una lectura socioeducativa rigurosa identifica factores de riesgo y protección, formula objetivos breves, activa apoyos realistas, coordina sistemas y revisa resultados con indicadores observables.</p>
+          <div class="closure-grid" aria-label="Secuencia mínima de cierre preventivo">
+            <div class="closure-step"><b>1. Validar</b><span>Riesgos, protección y consentimiento informado.</span></div>
+            <div class="closure-step"><b>2. Coordinar</b><span>Responsables, recursos y canal de comunicación.</span></div>
+            <div class="closure-step"><b>3. Revisar</b><span>Indicadores, alertas y fecha de seguimiento.</span></div>
+          </div>
+          <div class="summary-actions">
+            <button class="button button--primary" type="button" id="copy-summary-button">Copiar informe breve</button>
+          </div>
+          <p class="feedback-text" id="copy-feedback" aria-live="polite"></p>
+        </article>
       </div>
     </section>
 
@@ -139,6 +178,6 @@
 
   <footer class="footer"><p>Microinfografía académica interactiva · Educación Social · Carlos Aranda Sánchez · 2026</p><button class="back-top" id="back-to-top" type="button">Volver arriba</button></footer>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="js/app.js?v=20260519-03"></script>
+  <script src="js/app.js?v=20260521-01"></script>
 </body>
 </html>
