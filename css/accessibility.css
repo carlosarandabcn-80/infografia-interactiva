@@ -1,0 +1,28 @@
+/* Capa de accesibilidad: visibilidad reducida, Android y preferencias persistentes. */
+:root{--access-offset:1rem}
+body.a11y-large{font-size:118%}
+body.a11y-xl{font-size:132%}
+body.a11y-spacing{letter-spacing:.03em;line-height:1.78}
+body.a11y-links a{text-decoration:underline;text-decoration-thickness:.14em;text-underline-offset:.18em}
+body.a11y-contrast{--bg:#ffffff;--surface:#ffffff;--ink:#000;--muted:#111;--line:#000;--primary:#000;--primary-2:#000;--teal:#003f46;--teal-2:#f2ffff;--accent:#7a3d00;--accent-2:#fff6e8;--focus:#ffcc00;--shadow:none;background:#fff;color:#000}
+body.a11y-contrast .site-header,body.a11y-contrast .nav,body.a11y-contrast .footer{background:#000!important;color:#fff!important}
+body.a11y-contrast .panel,body.a11y-contrast .ethics-card,body.a11y-contrast .metrics div,body.a11y-contrast .choice,body.a11y-contrast .chip,body.a11y-contrast .route-step,body.a11y-contrast .tool-card,body.a11y-contrast .checklist button{border:2px solid #000!important;background:#fff!important;color:#000!important;box-shadow:none!important}
+body.a11y-contrast .choice.active,body.a11y-contrast .chip.active,body.a11y-contrast .route-step.active,body.a11y-contrast .tool-card.active,body.a11y-contrast .checklist button[aria-pressed=true]{background:#000!important;color:#fff!important}
+body.a11y-contrast .choice.active small,body.a11y-contrast .tool-card.active small,body.a11y-contrast .route-step.active span span,body.a11y-contrast .checklist button[aria-pressed=true] .criterion-meta{color:#fff!important}
+body.a11y-contrast .button--primary{background:#000!important;color:#fff!important;border-color:#fff!important}
+body.a11y-contrast .reading-progress span{background:#ffcc00!important}
+body.a11y-reduce-motion *,body.a11y-reduce-motion *::before,body.a11y-reduce-motion *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+body.a11y-reduce-motion .reveal{opacity:1!important;transform:none!important}
+.ethics-card .card-kicker{font-size:.68rem!important;font-weight:850!important;letter-spacing:.04em!important;text-transform:none!important;padding:.28rem .52rem!important}
+.ethics-card h2{margin-top:.1rem}
+.nav__menu a{white-space:nowrap!important}
+.a11y-trigger{position:fixed;top:.7rem;left:.7rem;z-index:3000;display:inline-flex;align-items:center;justify-content:center;width:3rem;height:3rem;border:3px solid #fff;border-radius:999px;background:#000;color:#fff;font-size:1.35rem;font-weight:950;box-shadow:0 .45rem 1.2rem rgba(0,0,0,.25)}
+.a11y-trigger:hover{transform:translateY(-1px)}
+.a11y-trigger:focus-visible{outline:.26rem solid var(--focus,#ffbf47);outline-offset:.16rem}
+.a11y-panel{position:fixed;top:4.15rem;left:.7rem;z-index:2999;width:min(22rem,calc(100vw - 1.4rem));max-height:calc(100vh - 5rem);overflow:auto;border:2px solid #0e2a3a;border-radius:14px;background:#fff;color:#13212b;box-shadow:0 1rem 2.5rem rgba(0,0,0,.25);padding:1rem;display:none}
+.a11y-panel.open{display:block}
+.a11y-panel h2{font-size:1.2rem;margin:0 0 .35rem;color:#0e2a3a}.a11y-panel p{margin:0 0 .75rem;color:#425563}.a11y-options{display:grid;gap:.55rem}.a11y-option{display:grid;grid-template-columns:1.6rem 1fr;gap:.6rem;align-items:start;border:1px solid #d6e0e4;border-radius:10px;padding:.7rem;background:#f8fbfb;color:#13212b;font-weight:800}.a11y-option input{width:1.25rem;height:1.25rem;margin:.1rem 0 0}.a11y-option small{display:block;margin-top:.15rem;color:#516270;font-weight:650;line-height:1.35}.a11y-actions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.8rem}.a11y-actions button{border:1px solid #0e2a3a;border-radius:999px;background:#fff;color:#0e2a3a;padding:.55rem .75rem;font-weight:850}.a11y-actions button:first-child{background:#0e2a3a;color:#fff}
+body.a11y-panel-open .a11y-trigger{background:#b36b24}
+@media(max-width:760px){.a11y-trigger{top:.55rem;left:.55rem;width:3.25rem;height:3.25rem}.nav{padding-left:4.2rem}.a11y-panel{top:4rem;left:.55rem}.nav__menu a{white-space:normal!important}}
+@media(max-width:430px){.brand__mark{width:6.4rem!important}.brand__text strong{font-size:.9rem!important}.hero h1{font-size:2.25rem}}
+@media print{.a11y-trigger,.a11y-panel{display:none!important}}
